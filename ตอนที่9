@@ -1,0 +1,39 @@
+ตอนที่ 9 Debug โปรแกรม
+1. โปรแกรมนี้ผิดพลาดที่บรรทัดใด
+
+ตอบ
+
+for (int i = 0; i <= numbers.length; i++)
+
+หรือบรรทัดที่เรียก
+
+System.out.println(numbers[i]);
+
+เมื่อ i มีค่าเท่ากับ numbers.length
+
+2. เพราะเหตุใดจึงเกิดข้อผิดพลาด
+
+ตอบ
+
+เพราะ Array มีสมาชิกตั้งแต่ตำแหน่ง 0 ถึง 4 แต่ลูปใช้ i <= numbers.length
+ทำให้ i มีค่าเป็น 5 ซึ่งไม่มีตำแหน่งใน Array จึงเกิด
+ArrayIndexOutOfBoundsException
+3. ควรแก้ไขอย่างไร
+
+ตอบ
+
+เปลี่ยนเงื่อนไขของลูปจาก <= เป็น <
+โค้ดที่แก้ไขแล้ว
+public class DebugExample {
+
+    public static void main(String[] args) {
+
+        int[] numbers = {10,20,30,40,50};
+
+        for(int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
+        }
+
+    }
+
+}

@@ -1,0 +1,59 @@
+ตอนที่ 7 ค้นหาข้อมูลใน Array
+Pseudocode
+เริ่มต้นโปรแกรม
+
+กำหนด Array ชื่อ 5 คน
+
+รับชื่อที่ต้องการค้นหา
+
+กำหนด found = false
+
+วนตรวจสอบทุกชื่อใน Array
+
+ถ้าชื่อตรงกัน
+    found = true
+
+ถ้า found เป็นจริง
+    แสดง Found
+มิฉะนั้น
+    แสดง Not Found
+
+จบโปรแกรม
+Java Code
+import java.util.Scanner;
+
+public class SearchName {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String[] names = {
+                "Somchai",
+                "Somsri",
+                "Anan",
+                "Nida",
+                "Kanya"
+        };
+
+        System.out.print("Enter name to search: ");
+        String search = sc.nextLine();
+
+        boolean found = false;
+
+        for (String name : names) {
+            if (name.equalsIgnoreCase(search)) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            System.out.println("Found");
+        } else {
+            System.out.println("Not Found");
+        }
+
+        sc.close();
+    }
+}
